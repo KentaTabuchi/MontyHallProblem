@@ -1,0 +1,15 @@
+C:\Users\tabuchikenta\source\repos\MontyHole\MontyHole\bin\Debug\MontyHole.exe.config
+C:\Users\tabuchikenta\source\repos\MontyHole\MontyHole\bin\Debug\MontyHole.exe
+C:\Users\tabuchikenta\source\repos\MontyHole\MontyHole\bin\Debug\MontyHole.pdb
+C:\Users\tabuchikenta\source\repos\MontyHole\MontyHole\obj\Debug\MontyHole.csprojAssemblyReference.cache
+C:\Users\tabuchikenta\source\repos\MontyHole\MontyHole\obj\Debug\MainWindow.g.cs
+C:\Users\tabuchikenta\source\repos\MontyHole\MontyHole\obj\Debug\App.g.cs
+C:\Users\tabuchikenta\source\repos\MontyHole\MontyHole\obj\Debug\MontyHole_MarkupCompile.cache
+C:\Users\tabuchikenta\source\repos\MontyHole\MontyHole\obj\Debug\MontyHole_MarkupCompile.lref
+C:\Users\tabuchikenta\source\repos\MontyHole\MontyHole\obj\Debug\MainWindow.baml
+C:\Users\tabuchikenta\source\repos\MontyHole\MontyHole\obj\Debug\MontyHole.g.resources
+C:\Users\tabuchikenta\source\repos\MontyHole\MontyHole\obj\Debug\MontyHole.Properties.Resources.resources
+C:\Users\tabuchikenta\source\repos\MontyHole\MontyHole\obj\Debug\MontyHole.csproj.GenerateResource.cache
+C:\Users\tabuchikenta\source\repos\MontyHole\MontyHole\obj\Debug\MontyHole.csproj.CoreCompileInputs.cache
+C:\Users\tabuchikenta\source\repos\MontyHole\MontyHole\obj\Debug\MontyHole.exe
+C:\Users\tabuchikenta\source\repos\MontyHole\MontyHole\obj\Debug\MontyHole.pdb
