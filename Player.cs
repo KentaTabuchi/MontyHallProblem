@@ -11,6 +11,7 @@ namespace MontyHole
     class Player
     {
         int selectionNumber;//選択中のドア
+        
         MainWindow mainWindow;
         GameMain gameMain;
         public Player(MainWindow mainWindow,GameMain gameMain){
@@ -23,22 +24,46 @@ namespace MontyHole
         public void DecideFirstSelect(int selectedDoor) {
             selectionNumber = selectedDoor;
             mainWindow.SelectionLabel.Content = $"選択中のドアは{selectionNumber}番です。";
-         
-            //ここでプライヤーがドアの前に立つイラストを入れる。
+            MovePlayerImage();
+    
         }
         /*２回目のドア選択中*/
         public void DecideSecondSelect(int selectedDoor)
         {
-            if(gameMain.ChairPerson.ShownNo == selectedDoor) {
+            if (gameMain.ChairPerson.ShownNo == selectedDoor)
+            {
                 mainWindow.SelectionLabel.Content = "それは外れです。他を選んでください。";
             }
-            selectionNumber = selectedDoor;
-            
-            mainWindow.SelectionLabel.Content = $"選択中のドアは{selectionNumber}番です。";
+            else
+            {
+                selectionNumber = selectedDoor;
 
-            //ここでプライヤーがドアの前に立つイラストを入れる。
+                mainWindow.SelectionLabel.Content = $"選択中のドアは{selectionNumber}番です。";
+                MovePlayerImage();
+            }
         }
-
-
+        /*選択中のドアの上にプレイヤーの絵を動かす*/
+        private void MovePlayerImage() {
+            switch (selectionNumber) {
+                case 1:
+                    mainWindow.ImagePlayer1.Visibility = System.Windows.Visibility.Visible;
+                    mainWindow.ImagePlayer2.Visibility = System.Windows.Visibility.Hidden;
+                    mainWindow.ImagePlayer3.Visibility = System.Windows.Visibility.Hidden;
+                    break;
+                case 2:
+                    mainWindow.ImagePlayer2.Visibility = System.Windows.Visibility.Visible;
+                    mainWindow.ImagePlayer1.Visibility = System.Windows.Visibility.Hidden;
+                    mainWindow.ImagePlayer3.Visibility = System.Windows.Visibility.Hidden;
+                    break;
+                case 3:
+                    mainWindow.ImagePlayer3.Visibility = System.Windows.Visibility.Visible;
+                    mainWindow.ImagePlayer1.Visibility = System.Windows.Visibility.Hidden;
+                    mainWindow.ImagePlayer2.Visibility = System.Windows.Visibility.Hidden;
+                    break;
+            }
+            
+        }
     }
 }
+
+

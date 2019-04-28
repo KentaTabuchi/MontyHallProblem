@@ -7,12 +7,15 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Button x:Name="OK_Button" Content="OK" HorizontalAlignment="Left" Margin="270,230,0,0" VerticalAlignment="Top" Width="75" Click="OK_Button_Click"/>
-        <Label x:Name="MessageLabel" Content="ドアを選んでください" HorizontalAlignment="Left" Margin="240,51,0,0" VerticalAlignment="Top" Width="400"/>
+        <Button x:Name="OK_Button" Content="このドアに決定する" HorizontalAlignment="Left" Margin="276,270,0,0" VerticalAlignment="Top" Width="100" Click="OK_Button_Click" RenderTransformOrigin="0.502,6.801"/>
+        <Label x:Name="MessageLabel" Content="ドアを選んでください" HorizontalAlignment="Left" Margin="181,316,0,0" VerticalAlignment="Top" Width="319" Height="60" BorderBrush="#FF490303" Background="#FFFFEAD8"/>
         <Image x:Name="Image1" HorizontalAlignment="Left" Height="100" Margin="100,124,0,0" VerticalAlignment="Top" Width="100" MouseDown="Image1_MouseDown" OpacityMask="#FF6A75E8" Source="Assets/closedoor.jpg"/>
-        <Label x:Name="SelectionLabel" Content="選択中のドア：1番" HorizontalAlignment="Left" Height="28" Margin="240,77,0,0" VerticalAlignment="Top" Width="198"/>
+        <Label x:Name="SelectionLabel" Content="選択中のドア：1番" HorizontalAlignment="Left" Height="28" Margin="257,10,0,0" VerticalAlignment="Top" Width="198"/>
         <Image x:Name="Image2" HorizontalAlignment="Center" Height="100" Margin="257,125,438,0" VerticalAlignment="Top" Width="100" MouseDown="Image2_MouseDown" Source="Assets/closedoor.jpg"/>
+        <Image x:Name="ImagePlayer1" HorizontalAlignment="Left" Height="56" Margin="124,63,0,0" VerticalAlignment="Top" Width="55" Source="Assets/player.jpg" OpacityMask="Black" RenderTransformOrigin="-0.261,-1.368"/>
         <Image x:Name="Image3" HorizontalAlignment="Left" Height="100" Margin="400,124,0,0" VerticalAlignment="Top" Width="100" MouseDown="Image3_MouseDown" Source="Assets/closedoor.jpg"/>
+        <Image x:Name="ImagePlayer2" HorizontalAlignment="Left" Height="56" Margin="276,63,0,0" VerticalAlignment="Top" Width="55" Source="Assets/player.jpg" OpacityMask="Black" RenderTransformOrigin="-0.261,-1.368"/>
+        <Image x:Name="ImagePlayer3" HorizontalAlignment="Left" Height="56" Margin="421,63,0,0" VerticalAlignment="Top" Width="55" Source="Assets/player.jpg" OpacityMask="Black" RenderTransformOrigin="-0.261,-1.368"/>
 
     </Grid>
 </Window>

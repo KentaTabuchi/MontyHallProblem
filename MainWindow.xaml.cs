@@ -77,7 +77,7 @@ namespace MontyHole
                     gameMain.Stage = GameMain.CHAIRMAN_TURN;
  
                     gameMain.ChairPersonTurn();
-                    MessageLabel.Content = "司会者が開きます。";
+              
                     
                     break;
                 case GameMain.CHAIRMAN_TURN:
