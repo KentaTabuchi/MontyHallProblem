@@ -25,6 +25,7 @@ namespace MontyHole
         public void DoorOpen()
         {
             //司会者はプレイヤーが選んだドアと正解のドア以外を選ぶ
+          
             for (int i = 1; i < 4; i++) {
                 if (gameMain.Player.SelectionNumber != i && gameMain.WinningNo != i) {
                     shownNo = i;
@@ -41,10 +42,12 @@ namespace MontyHole
             BitmapImage imageClose = new BitmapImage(new Uri(fnameClose));
 
             //司会者はドアを開けるだけで閉めない。
+            mainWindow.MessageLabel.Content = $"司会者は{shownNo}を選びました。";
             switch (shownNo)
             {
                 case 1:
                     mainWindow.Image1.Source = imageOpen;
+
                     break;
                 case 2:
                     mainWindow.Image2.Source = imageOpen;
@@ -53,6 +56,7 @@ namespace MontyHole
                     mainWindow.Image3.Source = imageOpen;
                     break;
             }
+            mainWindow.MessageLabel.Content = "ドア選びなおしてください。";
         }
     }
 

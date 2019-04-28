@@ -28,33 +28,70 @@ namespace MontyHole
         }
 
 
+
         private void Image1_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            gameMain.Player.SelectionNumber = 1;
-            SelectionLabel.Content = $"選択中のドアは{gameMain.Player.SelectionNumber}番です。";
-            gameMain.Player.openDoor();
-
+            switch (gameMain.Stage)
+            {
+                case GameMain.FIRST_PLAYER_TURN:
+                    gameMain.PlayerFirstTurn(1);
+                    break;
+                case GameMain.SECOND_PLAYER_TURN:
+                    gameMain.PlayerSecondTurn(1);
+                    break;
+            }
         }
 
         private void Image2_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            gameMain.Player.SelectionNumber = 2;
-            SelectionLabel.Content = $"選択中のドアは{gameMain.Player.SelectionNumber}番です。";
-            gameMain.Player.openDoor();
+            switch (gameMain.Stage)
+            {
+                case GameMain.FIRST_PLAYER_TURN:
+                    gameMain.PlayerFirstTurn(2);
+                    break;
+                case GameMain.SECOND_PLAYER_TURN:
+                    gameMain.PlayerSecondTurn(2);
+                    break;
+            }
         }
 
         private void Image3_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            gameMain.Player.SelectionNumber = 3;
-            SelectionLabel.Content = $"選択中のドアは{gameMain.Player.SelectionNumber}番です。";
-            gameMain.Player.openDoor();
+            switch (gameMain.Stage)
+            {
+                case GameMain.FIRST_PLAYER_TURN:
+                    gameMain.PlayerFirstTurn(3);
+                    break;
+                case GameMain.SECOND_PLAYER_TURN:
+                    gameMain.PlayerSecondTurn(3);
+                    break;
+            }
+
         }
 
         private void OK_Button_Click(object sender, RoutedEventArgs e)
         {
-            MessageLabel.Content = "司会者の番";//テスト用コード。後で消す。
+
             switch (gameMain.Stage) {
-                case 2:gameMain.ChairPersonTurn();
+                case GameMain.FIRST_PLAYER_TURN:
+                    gameMain.Stage = GameMain.CHAIRMAN_TURN;
+ 
+                    gameMain.ChairPersonTurn();
+                    MessageLabel.Content = "司会者が開きます。";
+                    
+                    break;
+                case GameMain.CHAIRMAN_TURN:
+                    gameMain.Stage = GameMain.SECOND_PLAYER_TURN;
+                    break;
+                case GameMain.SECOND_PLAYER_TURN:
+                    
+                    if (gameMain.Player.SelectionNumber == gameMain.WinningNo)
+                    {
+                        gameMain.GameSuccess();
+                    }
+                    else {
+                        gameMain.GameFailed();
+                    }
                     break;
             }
         }

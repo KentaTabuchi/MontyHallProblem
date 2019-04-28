@@ -12,40 +12,33 @@ namespace MontyHole
     {
         int selectionNumber;//選択中のドア
         MainWindow mainWindow;
-        public Player(MainWindow mainWindow){
+        GameMain gameMain;
+        public Player(MainWindow mainWindow,GameMain gameMain){
             this.mainWindow = mainWindow;
+            this.gameMain = gameMain;
         }
         public int SelectionNumber { get => selectionNumber; set => selectionNumber = value; }
         
-        /*ドアを選んで開けたとき*/
-        public void openDoor() {
-            string fnameOpen;
-            string fnameClose;
-            //fnameOpen = "ms-appx:///Assets/opendoor.png";
-            //fnameClose = "ms-appx:///Assets/closedoor.jpg";
-            fnameOpen = "C:/Users/tabuchikenta/source/repos/MontyHole/MontyHole/Assets/opendoor.png";
-            fnameClose = "C:/Users/tabuchikenta/source/repos/MontyHole/MontyHole/Assets/closedoor.jpg";
-            BitmapImage imageOpen = new BitmapImage(new Uri(fnameOpen));
-            BitmapImage imageClose = new BitmapImage(new Uri(fnameClose));
-
-            switch (selectionNumber) {
-                case 1:
-                    mainWindow.Image1.Source = imageOpen;
-                    mainWindow.Image2.Source = imageClose;
-                    mainWindow.Image3.Source = imageClose;
-                    break;
-                case 2:
-                    mainWindow.Image2.Source = imageOpen;
-                    mainWindow.Image1.Source = imageClose;
-                    mainWindow.Image3.Source = imageClose;
-                    break;
-                case 3:
-                    mainWindow.Image3.Source = imageOpen;
-                    mainWindow.Image1.Source = imageClose;
-                    mainWindow.Image2.Source = imageClose;
-                    break;
-            }
+        /*１回目のドア選択中*/
+        public void DecideFirstSelect(int selectedDoor) {
+            selectionNumber = selectedDoor;
+            mainWindow.SelectionLabel.Content = $"選択中のドアは{selectionNumber}番です。";
+         
+            //ここでプライヤーがドアの前に立つイラストを入れる。
         }
+        /*２回目のドア選択中*/
+        public void DecideSecondSelect(int selectedDoor)
+        {
+            if(gameMain.ChairPerson.ShownNo == selectedDoor) {
+                mainWindow.SelectionLabel.Content = "それは外れです。他を選んでください。";
+            }
+            selectionNumber = selectedDoor;
+            
+            mainWindow.SelectionLabel.Content = $"選択中のドアは{selectionNumber}番です。";
+
+            //ここでプライヤーがドアの前に立つイラストを入れる。
+        }
+
 
     }
 }
