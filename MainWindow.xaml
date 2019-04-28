@@ -16,6 +16,9 @@
         <Image x:Name="Image3" HorizontalAlignment="Left" Height="100" Margin="400,124,0,0" VerticalAlignment="Top" Width="100" MouseDown="Image3_MouseDown" Source="Assets/closedoor.jpg"/>
         <Image x:Name="ImagePlayer2" HorizontalAlignment="Left" Height="56" Margin="276,63,0,0" VerticalAlignment="Top" Width="55" Source="Assets/player.jpg" OpacityMask="Black" RenderTransformOrigin="-0.261,-1.368"/>
         <Image x:Name="ImagePlayer3" HorizontalAlignment="Left" Height="56" Margin="421,63,0,0" VerticalAlignment="Top" Width="55" Source="Assets/player.jpg" OpacityMask="Black" RenderTransformOrigin="-0.261,-1.368"/>
+        <Label x:Name="Label_WInNum" Content="勝利数:0" HorizontalAlignment="Left" Margin="551,103,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.708,-0.825" Width="102" Background="#FF1A0202" Foreground="White"/>
+        <Label x:Name="Label_LooseNum" Content="失敗数:0" HorizontalAlignment="Left" Margin="551,134,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.708,-0.825" Width="102" Background="#FF1A0202" Foreground="White"/>
+        <Image HorizontalAlignment="Left" Height="60" Margin="100,316,0,0" VerticalAlignment="Top" Width="76" Source="Assets/chairman.png"/>
 
     </Grid>
 </Window>

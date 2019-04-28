@@ -20,7 +20,8 @@ namespace MontyHole
             this.mainWindow = mainWindow;
             this.gameMain = gameMain;
         }
-        public int ShownNo { get => shownNo;  }
+
+        public int ShownNo { get => shownNo; set => shownNo = value; }
 
         public void DoorOpen()
         {
@@ -28,22 +29,21 @@ namespace MontyHole
           
             for (int i = 1; i < 4; i++) {
                 if (gameMain.Player.SelectionNumber != i && gameMain.WinningNo != i) {
-                    shownNo = i;
+                    ShownNo = i;
                 }
                
             }
             string fnameOpen;
             string fnameClose;
-            //fnameOpen = "ms-appx:///Assets/opendoor.png";
-            //fnameClose = "ms-appx:///Assets/closedoor.jpg";
+
             fnameOpen = "C:/Users/tabuchikenta/source/repos/MontyHole/MontyHole/Assets/opendoor.png";
             fnameClose = "C:/Users/tabuchikenta/source/repos/MontyHole/MontyHole/Assets/closedoor.jpg";
             BitmapImage imageOpen = new BitmapImage(new Uri(fnameOpen));
             BitmapImage imageClose = new BitmapImage(new Uri(fnameClose));
 
             //司会者はドアを開けるだけで閉めない。
-            mainWindow.MessageLabel.Content = $"司会者は{shownNo}を選びました。";
-            switch (shownNo)
+            mainWindow.MessageLabel.Content = $"は{ShownNo}を選びました。";
+            switch (ShownNo)
             {
                 case 1:
                     mainWindow.Image1.Source = imageOpen;
@@ -56,7 +56,7 @@ namespace MontyHole
                     mainWindow.Image3.Source = imageOpen;
                     break;
             }
-            mainWindow.MessageLabel.Content = "ドア選びなおしてください。";
+            mainWindow.MessageLabel.Content = "さあ、もう一度ドアを選んでください。";
         }
     }
 

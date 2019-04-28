@@ -17,6 +17,9 @@ namespace MontyHole
         public Player(MainWindow mainWindow,GameMain gameMain){
             this.mainWindow = mainWindow;
             this.gameMain = gameMain;
+            mainWindow.ImagePlayer1.Visibility = System.Windows.Visibility.Hidden;
+            mainWindow.ImagePlayer2.Visibility = System.Windows.Visibility.Hidden;
+            mainWindow.ImagePlayer3.Visibility = System.Windows.Visibility.Hidden;
         }
         public int SelectionNumber { get => selectionNumber; set => selectionNumber = value; }
         
@@ -32,7 +35,7 @@ namespace MontyHole
         {
             if (gameMain.ChairPerson.ShownNo == selectedDoor)
             {
-                mainWindow.SelectionLabel.Content = "それは外れです。他を選んでください。";
+                mainWindow.MessageLabel.Content = "またまたｗ、わざと外れ選んだらダメですよ。他を選んでください。";
             }
             else
             {
